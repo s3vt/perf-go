@@ -64,7 +64,7 @@ func TestXMLToStruct(t *testing.T) {
 		want       *User
 		wantErr    bool
 	}{
-		{name: "Test1", userString: "<User><ID>1</ID><Name>SomeName</Name></User>", want: &User{ID: 1, Name: "SomeName"}, wantErr: false},
+		{name: "Test1", userString: "<User><userid>1</userid><username>SomeName</username></User>", want: &User{ID: 1, Name: "SomeName"}, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -87,7 +87,7 @@ func TestStructToXML(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
-		{name: "Test1", want: "<User><ID>1</ID><Name>SomeName</Name></User>", user: &User{ID: 1, Name: "SomeName"}, wantErr: false},
+		{name: "Test1", want: "<User><userid>1</userid><username>SomeName</username></User>", user: &User{ID: 1, Name: "SomeName"}, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

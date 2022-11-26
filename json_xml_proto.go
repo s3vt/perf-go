@@ -9,8 +9,8 @@ import (
 )
 
 type User struct {
-	ID   uint64 `json:"userid" xml="userid"`
-	Name string `json:"username" xml="username"`
+	ID   uint64 `json:"userid" xml:"userid"`
+	Name string `json:"username" xml:"username"`
 }
 
 func (u *User) String() string { return fmt.Sprintf("ID=%d Name=%s", u.ID, u.Name) }
